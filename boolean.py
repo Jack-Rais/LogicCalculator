@@ -1,3 +1,5 @@
+import numpy as np
+
 class Or:
 
     def __init__(self, *args, exc=False):
@@ -14,7 +16,7 @@ class Or:
             if isinstance(x, (Or, And, Not)):
                 lista_bool.append(x.valuate(dictionary))
             else:
-                lista_bool.append(dictionary[x])
+                lista_bool.append(dictionary.get(x, False))
 
         if not self.exc:
             if True in lista_bool:
@@ -67,7 +69,7 @@ class And:
             if isinstance(x, (Or, And, Not)):
                 lista_bool.append(x.valuate(dictionary))
             else:
-                lista_bool.append(dictionary[x])
+                lista_bool.append(dictionary.get(x, False))
 
         if False in lista_bool:
             return False
@@ -108,7 +110,7 @@ class Not:
             if isinstance(x, (Or, And, Not)):
                 lista_bool.append(x.valuate(dictionary))
             else:
-                lista_bool.append(dictionary[x])
+                lista_bool.append(dictionary.get(x, False))
 
         if False in lista_bool:
             return True
