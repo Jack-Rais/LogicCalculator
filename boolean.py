@@ -1,5 +1,3 @@
-import numpy as np
-
 class Or:
 
     def __init__(self, *args, exc=False):
