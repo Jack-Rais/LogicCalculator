@@ -8,4 +8,5 @@ model = Resolver()
 model.add_conn(And('name1', Or('name2', 'name3'))
 
 for result in model.calc_poss():
-  print(result)```
+  print(result)
+```
