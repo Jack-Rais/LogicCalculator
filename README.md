@@ -19,7 +19,7 @@ for result in model.calc_poss():
  'name3' : False}
 ```
 
-## For choosing an element in a preset list of known parameters
+### To choose an element in a preset list of known parameters
 This model can be used like this:
 
 ```
